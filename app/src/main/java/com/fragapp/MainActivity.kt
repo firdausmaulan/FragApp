@@ -19,20 +19,33 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        loadFragment(HomeFragment(), TAG_HOME)
+        addFragment(HomeFragment(), TAG_HOME)
     }
 
     fun openDetail() {
-        loadFragment(DetailFragment(), TAG_DETAIL)
+        addFragment(DetailFragment(), TAG_DETAIL)
+        //replaceFragment(DetailFragment(), TAG_DETAIL)
     }
 
-    private fun loadFragment(fragment: Fragment, tag: String) {
+    private fun addFragment(fragment: Fragment, tag: String) {
         // create a FragmentManager
         fm = supportFragmentManager
         // create a FragmentTransaction to begin the transaction and replace the Fragment
         val fragmentTransaction = fm.beginTransaction()
         // replace the FrameLayout with new Fragment
         fragmentTransaction.add(R.id.frameLayout, fragment, tag)
+        lastTag?.let { fragmentTransaction.addToBackStack(it) }
+        fragmentTransaction.commit() // save the changes
+        lastTag = tag
+    }
+
+    private fun replaceFragment(fragment: Fragment, tag: String) {
+        // create a FragmentManager
+        fm = supportFragmentManager
+        // create a FragmentTransaction to begin the transaction and replace the Fragment
+        val fragmentTransaction = fm.beginTransaction()
+        // replace the FrameLayout with new Fragment
+        fragmentTransaction.replace(R.id.frameLayout, fragment, tag)
         lastTag?.let { fragmentTransaction.addToBackStack(it) }
         fragmentTransaction.commit() // save the changes
         lastTag = tag

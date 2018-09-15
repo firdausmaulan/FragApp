@@ -29,14 +29,14 @@ class OneFragment : Fragment() {
         }
 
         val listView = view.findViewById<ListView>(R.id.listView)
-        val adapter = ArrayAdapter<String>(activity!!,
+        val adapter = ArrayAdapter<String>(activity,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values)
         // Assign adapter to ListView
         listView.adapter = adapter
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
             val main = activity as MainActivity?
-            main!!.openDetail()
+            main?.openDetail()
         }
 
         return view
