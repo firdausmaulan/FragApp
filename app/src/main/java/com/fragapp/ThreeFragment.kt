@@ -9,8 +9,8 @@ import android.widget.TextView
 
 class ThreeFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    public fun ThreeFragment(){
+        // Required empty public constructor
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -22,4 +22,4 @@ class ThreeFragment : Fragment() {
         return view
     }
 
-}// Required empty public constructor
+}

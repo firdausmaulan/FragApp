@@ -10,8 +10,8 @@ import android.widget.ListView
 
 class DetailFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    public fun DetailFragment(){
+        // Required empty public constructor
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -30,5 +30,4 @@ class DetailFragment : Fragment() {
         listView.adapter = adapter
         return view
     }
-
-}// Required empty public constructor
+}

@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.home_fragment.view.*
 
 class HomeFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    public fun HomeFragment(){
+        // Required empty public constructor
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -57,5 +57,4 @@ class HomeFragment : Fragment() {
             return mFragmentTitleList.get(position)
         }
     }
-
 }

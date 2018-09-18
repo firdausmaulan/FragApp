@@ -1,6 +1,5 @@
 package com.fragapp
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,12 +9,10 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 
-import java.util.ArrayList
-
 class OneFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    public fun OneFragment(){
+        // Required empty public constructor
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -41,5 +38,4 @@ class OneFragment : Fragment() {
 
         return view
     }
-
-}// Required empty public constructor
+}

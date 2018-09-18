@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
     private fun addFragment(fragment: Fragment, tag: String) {
         // create a FragmentManager
         fm = supportFragmentManager
-        // create a FragmentTransaction to begin the transaction and replace the Fragment
+        // create a FragmentTransaction to begin the transaction and add the Fragment
         val fragmentTransaction = fm.beginTransaction()
-        // replace the FrameLayout with new Fragment
+        // add new Fragment to the FrameLayout
         fragmentTransaction.add(R.id.frameLayout, fragment, tag)
         lastTag?.let { fragmentTransaction.addToBackStack(it) }
         fragmentTransaction.commit() // save the changes
